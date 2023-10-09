@@ -3,7 +3,10 @@
 
 MainWindow::MainWindow(QWidget* parent)	: QMainWindow(parent), timeCount(0){}
 
-void MainWindow::startTimer(){}
+void MainWindow::startTimer(){
+	timer->start(1000); // Start the timer with 1 second interval
+}
+
 void MainWindow::stopTimer(){
 	timer->stop();
 	timeCount = 0;
