@@ -11,6 +11,10 @@ class MainWindow : public QMainWindow {
 
 public:
 	MainWindow(QWidget* parent = nullptr);
+private slots:
+	void startTimer();
+	void stopTimer();
+	void pauseTimer();
 
 };
 #endif
