@@ -4,6 +4,13 @@
 MainWindow::MainWindow(QWidget* parent)	: QMainWindow(parent), timeCount(0){
 	setFixedSize(200, 100);
 	setWindowTitle("Timer");
+	
+	timeLabel = new QLabel("0", this);
+	timeLabel->setAlignment(Qt::AlignCenter);
+
+	startButton = new QPushButton("Start", this);
+	stopButton = new QPushButton("Stop", this);
+	pauseButton = new QPushButton("Pause", this);
 }
 
 void MainWindow::startTimer(){
