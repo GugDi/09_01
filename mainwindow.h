@@ -6,4 +6,7 @@
 #include <QPushButton>
 #include <QTimer>
 
+class MainWindow : public QMainWindow {
+
+};
 #endif
