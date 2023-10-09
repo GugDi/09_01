@@ -11,6 +11,19 @@ MainWindow::MainWindow(QWidget* parent)	: QMainWindow(parent), timeCount(0){
 	startButton = new QPushButton("Start", this);
 	stopButton = new QPushButton("Stop", this);
 	pauseButton = new QPushButton("Pause", this);
+
+	QHBoxLayout* layout = new QHBoxLayout;
+	layout->addWidget(startButton);
+	layout->addWidget(stopButton);
+	layout->addWidget(pauseButton);
+
+	QVBoxLayout* mainLayout = new QVBoxLayout;
+	mainLayout->addWidget(timeLabel);
+	mainLayout->addLayout(layout);
+
+	QWidget* centralWidget = new QWidget(this);
+	centralWidget->setLayout(mainLayout);
+	setCentralWidget(centralWidget);
 }
 
 void MainWindow::startTimer(){
