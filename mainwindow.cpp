@@ -5,7 +5,9 @@ MainWindow::MainWindow(QWidget* parent)	: QMainWindow(parent), timeCount(0){}
 
 void MainWindow::startTimer(){}
 void MainWindow::stopTimer(){}
-void MainWindow::pauseTimer(){}
+void MainWindow::pauseTimer(){
+	timer->stop();
+}
 void MainWindow::updateTimerLabel(){
 	timeLabel->setText(QString::number(timeCount));
 }
