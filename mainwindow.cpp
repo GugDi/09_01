@@ -24,6 +24,16 @@ MainWindow::MainWindow(QWidget* parent)	: QMainWindow(parent), timeCount(0){
 	QWidget* centralWidget = new QWidget(this);
 	centralWidget->setLayout(mainLayout);
 	setCentralWidget(centralWidget);
+
+	connect(startButton, &QPushButton::clicked, this, &MainWindow::startTimer);
+	connect(stopButton, &QPushButton::clicked, this, &MainWindow::stopTimer);
+	connect(pauseButton, &QPushButton::clicked, this, &MainWindow::pauseTimer);
+
+	timer = new QTimer(this);
+	connect(timer, &QTimer::timeout, [this]() {
+		++timeCount;
+		updateTimerLabel();
+		});
 }
 
 void MainWindow::startTimer(){
